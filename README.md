@@ -1,19 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Login Through API
 
-## Available Scripts
+This is project based on ReactJS it uses API to login user.
 
-In the project directory, you can run:
 
-### `npm start`
+## Requirements 
+* ReactJs
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-hell0
-hi
+## Getting started
 
-np
+ 1. Run `npm install` , all required dependencies will be installed automatically.
+ 2. Run `npm start`
 
-### `npm test`
+## Screenshort
+![see here]
