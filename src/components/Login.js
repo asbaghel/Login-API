@@ -6,9 +6,10 @@ import HomePg from "./HomePg";
 
 export default class Login extends Component {
   state = {
-    username: "",
+    phoneno: "",
     password: "",
-    valid: false
+    login: false,
+
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -17,14 +18,14 @@ export default class Login extends Component {
     e.preventDefault();
 
     const post = {
-      email: this.state.username,
+      phoneno: this.state.phoneno,
       password: this.state.password
     };
 
     console.log("this is  post ", post);
     console.log("this is  JSON post ", JSON.stringify(post));
 
-    fetch("https://reqres.in/api/login", {
+    fetch("http://localhost:4000/signin", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -34,15 +35,15 @@ export default class Login extends Component {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data.token);
-        if (data.token == "QpwL5tke4Pnpja7X4") {
-          this.setState({ valid: true });
+        console.log(data);
+        if (data && data.token) {
+          this.setState({ login: true });
         }
       });
   };
 
   render() {
-    if (this.state.valid === true) {
+    if (this.state.login === true) {
       return <Redirect to="/home" />;
     }
 
@@ -57,11 +58,11 @@ export default class Login extends Component {
 
         <form onSubmit={this.onSubmit}>
           <input
-            type="text"
-            name="username"
-            value={this.state.username}
+            type="number"
+            name="phoneno"
+            value={this.state.phoneno}
             onChange={this.onChange}
-            placeholder="Username"
+            placeholder="Phone No."
             style={{ flex: "10", padding: "10px", color: "red" }}
           ></input>
           <br></br>

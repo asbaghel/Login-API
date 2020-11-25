@@ -3,7 +3,7 @@
 }
 
 .bgcolor {
-  background-image: linear-gradient(rgb(5, 4, 65), rgb(12, 16, 238) );
+  background-color:black;
   width:100%;
   height: 100%;
   position: absolute;
