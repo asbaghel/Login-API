@@ -55,7 +55,7 @@ export default class Login extends Component {
         </Link>
 </div>
 
-<h1>Corporate Health Insurance Provider</h1>
+<h1 className="header">Corporate Health Insurance Provider</h1>
         <form onSubmit={this.onSubmit}>
           <input
             type="number"

@@ -3,26 +3,23 @@
 }
 
 .bgcolor {
-  background: #CEF3FF;
-  width:100%;
+  background: #cef3ff;
+  width: 100%;
   height: 100%;
   position: absolute;
 }
 
-form
-{
+form {
   text-align: center;
   margin-top: 15%;
-
 }
-.Register ,label , input{
-
- text-align: center;
- width: 180.8px;
- margin: auto;
-
+.Register,
+label,
+input {
+  text-align: center;
+  width: 180.8px;
+  margin: auto;
 }
-
 
 .App-logo {
   height: 40vmin;
@@ -59,24 +56,20 @@ form
   }
 }
 
-.header{
- 
- text-align: center;
- padding-top: 5px;
- padding-bottom: 5px;
- color: rgb(4, 53, 48);
+.header {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: rgb(4, 53, 48);
 }
-.logout-btn{
-  padding: auto;  position: absolute;
- 
- margin-left: 1450px;
+.logout-btn {
+  padding: auto;
+  position: absolute;
+
+  margin-left: 1450px;
   /* margin-top:-100px; */
-  
-
-
-
 }
-.tablist{
+.tablist {
   border: #282c34 solid;
   display: inline-block;
   width: 100%;
@@ -84,13 +77,33 @@ form
   padding: auto;
   margin: auto;
 }
-.tab{
- 
-
+.tab {
 }
-.acc-type{
+.acc-type {
   background-color: black;
- padding: auto;
+  padding: auto;
   text-align: center;
-  color: #CEF3FF;
+  color: #cef3ff;
 }
+
+.grid-container {
+ 
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background: #cef3ff;  
+  padding: 40px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 150px;
+  width: 300px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  box-shadow: black inset;
+  border-radius: 6%;
+  box-shadow: 4px 3px rgb(186, 219, 219);
+}
+

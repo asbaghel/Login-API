@@ -56,33 +56,33 @@ export default class Register extends Component {
       
       <div className="bgcolor">
           
-          <Link to="/" style={{ backgroundColor: "white"   }} >
+          <Link to="/" >
          Go Back to Login Page
         </Link>
         <form onSubmit={this.onSubmit}>
-          <label style={{color:'white'}}>Full Name</label>
+          <label >Full Name</label>
           <br></br>
           <input  name="fullname" type="text" onChange={this.onChange}></input>
           <br></br>
-          <label style={{color:'white'}}>Email</label>
+          <label >Email</label>
           <br></br>
           <input name="email" type="email" onChange={this.onChange}></input>
           <br></br>
-          <label style={{color:'white'}}>Mobile Number</label>
+          <label >Mobile Number</label>
           <br></br>
           <input name="Mobileno" type="Number" onChange={this.onChange}></input>
           <br></br>
-          <label style={{color:'white'}}>Gender</label>
+          <label >Gender</label>
           <br></br>
           <input name="gender" type="text" onChange={this.onChange}></input>
 
           <br></br>
-          <label style={{color:'white'}} >Password</label>
+          <label >Password</label>
           <br></br>
           
                     <input name="pass" type="password" onChange={this.onChange}></input>
                     <br></br>
-          <label style={{color:'white'}}>Re-enter Password</label>
+          <label>Re-enter Password</label>
           <br></br>
           <input name="repass" type="password" onChange={this.onChange}></input>
           <br></br>
