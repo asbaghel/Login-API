@@ -50,12 +50,12 @@ export default class Login extends Component {
     return (
       <div className="bgcolor">
         <div className="Register">
-<Link to="/register" style={{ backgroundColor: "white"   }} >
+<Link to="/register" >
          New?  Register Here.
         </Link>
 </div>
 
-
+<h1>Corporate Health Insurance Provider</h1>
         <form onSubmit={this.onSubmit}>
           <input
             type="number"
@@ -78,8 +78,9 @@ export default class Login extends Component {
           <input
             type="submit"
             value="submit"
-            className="btn"
-            style={{ width:"204.8px", flex: "1", padding: "10px", color: "red" }}
+            className="btn btn-primary"
+           
+            style={{ width:"204.8px", flex: "1", padding: "10px", color: "black" }}
           ></input>
         </form>
 
