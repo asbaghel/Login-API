@@ -11,6 +11,7 @@ This is project based on ReactJS it uses API to login user.
 
  1. Run `npm install` , all required dependencies will be installed automatically.
  2. Run `npm start`
+ 3.  Git clone Api project https://github.com/asbaghel/chip-api
 
 ## Screenshort
 ![see here](https://github.com/asbaghel/Login-API/blob/master/screenshorts/src1.png?raw=true)
