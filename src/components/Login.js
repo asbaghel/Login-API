@@ -50,7 +50,7 @@ export default class Login extends Component {
     return (
       <div className="bgcolor">
         <div className="Register">
-<Link to="/register" >
+<Link to="/register"  >
          New?  Register Here.
         </Link>
 </div>

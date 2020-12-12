@@ -24,7 +24,10 @@ export default class Register extends Component {
     e.preventDefault();
     const post = {
       phoneno: this.state.Mobileno,
-      password :this.state.pass
+      password :this.state.pass,
+      email:this.state.email,
+      gender:this.state.gender,
+      name:this.state.fullname,
     };
     fetch("http://localhost:4000/signup", {
       method: "POST",

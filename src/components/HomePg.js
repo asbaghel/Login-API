@@ -4,10 +4,12 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import "../App.css";
 import Cards from "./Cards";
+import EmployeeList from "./EmployeeList";
 export default class HomePg extends Component {
   state = {
     logout: false,
-    dashboard:["Total no of employees:","Active Claims:","Pending Claims","Next Renewal date"]
+    dashboard:["Total no of employees:","Active Claims:","Pending Claims","Next Renewal date"],
+    policies:["Policy no 1","Policy no 2","Policy no 3 "]
   };
 
   onClick = () => {
@@ -39,16 +41,21 @@ export default class HomePg extends Component {
     <Cards number="10" data={this.state.dashboard}></Cards>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+   <EmployeeList></EmployeeList>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 3</h2>
+    <Cards number="10" data={this.state.policies}></Cards>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 4</h2>
+      <h2>No Claims</h2>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 5</h2>
+      
+     <div>For any query mail us on help@chip.com</div>
+    </TabPanel>
+    <TabPanel>
+      {/* Profile */}
+      <h2></h2>
     </TabPanel>
   </Tabs>
      
