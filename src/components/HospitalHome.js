@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "../App.css";
 import Cards from "./Cards";
-import EmployeeList from "./EmployeeList";
+import PatientList from "./PatientList";
 export default class HomePg extends Component {
   state = {
     logout: false,
@@ -31,29 +31,21 @@ export default class HomePg extends Component {
         <button onClick={this.onClick} className="logout-btn">
           Logout
         </button>
-        <div className="acc-type">CORPORATE</div>
+        <div className="acc-type">HOSPITAL</div>
 
         <Tabs>
           <TabList>
-            <Tab>🧾Dashboard</Tab>
-            <Tab>👨‍💼Employee List</Tab>
-            <Tab>📒Policies</Tab>
-            <Tab>🏥Claims</Tab>
+            
+           
+            <Tab>🏥Patient</Tab>
             <Tab>💡Help</Tab>
             <Tab>😀Profile</Tab>
           </TabList>
 
+          
+         
           <TabPanel>
-            <Cards number="10" data={this.state.dashboard}></Cards>
-          </TabPanel>
-          <TabPanel>
-            <EmployeeList></EmployeeList>
-          </TabPanel>
-          <TabPanel>
-            <Cards number="10" data={this.state.policies}></Cards>
-          </TabPanel>
-          <TabPanel>
-            <h2>No Claims</h2>
+          <PatientList></PatientList>
           </TabPanel>
           <TabPanel>
             <div>For any query mail us on help@chip.com</div>

@@ -3,23 +3,24 @@ import { Redirect, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import HomePg from "./HomePg";
+import HospitalHome from "./HospitalHome"
 
 export default class Login extends Component {
   state = {
     phoneno: "",
     password: "",
     login: false,
-
+    userType:"",
   };
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
 
     const post = {
       phoneno: this.state.phoneno,
-      password: this.state.password
+      password: this.state.password,
     };
 
     console.log("this is  post ", post);
@@ -29,33 +30,41 @@ export default class Login extends Component {
       method: "POST",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(post)
+      body: JSON.stringify(post),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         if (data && data.token) {
-          this.setState({ login: true });
+          this.setState({ ...this.state,login: true });
+        }
+        if(data && data.userType)
+        {
+          
+          this.setState({userType:data.userType})
         }
       });
   };
 
   render() {
-    if (this.state.login === true) {
+    if (this.state.login === true && this.state.userType=="HR") {
+      console.log(this.state.userType)
       return <Redirect to="/home" />;
+    }
+    if (this.state.login === true && this.state.userType=="Hospital") {
+      console.log(this.state.userType)
+      return <Redirect to="/hospitalHome" />;
     }
 
     return (
       <div className="bgcolor">
         <div className="Register">
-<Link to="/register"  >
-         New?  Register Here.
-        </Link>
-</div>
+          <Link to="/register">New? Register Here.</Link>
+        </div>
 
-<h1 className="header">Corporate Health Insurance Provider</h1>
+        <h1 className="header">Corporate Health Insurance Provider</h1>
         <form onSubmit={this.onSubmit}>
           <input
             type="number"
@@ -77,15 +86,11 @@ export default class Login extends Component {
           <br></br>
           <input
             type="submit"
-            value="submit"
-            className="btn btn-primary"
+            value="Login"
+            className="login-button"
            
-            style={{ width:"204.8px", flex: "1", padding: "10px", color: "black" }}
           ></input>
         </form>
-
-      
-        
       </div>
     );
   }
