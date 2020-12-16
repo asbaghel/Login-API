@@ -5,6 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import "../App.css";
 import Cards from "./Cards";
 import EmployeeList from "./EmployeeList";
+import Profile from "./Profile";
 export default class HomePg extends Component {
   state = {
     logout: false,
@@ -17,6 +18,10 @@ export default class HomePg extends Component {
     policies: ["Policy no 1", "Policy no 2", "Policy no 3 "],
   };
 
+  componentDidMount()
+  {
+    console.log(this.props)
+  }
   onClick = () => {
     this.setState({ logout: true });
   };
@@ -25,7 +30,9 @@ export default class HomePg extends Component {
       return <Redirect to="/"></Redirect>;
     }
     return (
+      
       <div className="bgcolor">
+       
         <h1 class="header">Corporate Health Insurance Provider</h1>
 
         <button onClick={this.onClick} className="logout-btn">
@@ -59,8 +66,7 @@ export default class HomePg extends Component {
             <div>For any query mail us on help@chip.com</div>
           </TabPanel>
           <TabPanel>
-            {/* Profile */}
-            <h2></h2>
+          <Profile phoneno={this.props.phoneno} ></Profile>
           </TabPanel>
         </Tabs>
       </div>

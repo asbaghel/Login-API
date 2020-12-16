@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import HomePg from "./HomePg";
 import HospitalHome from "./HospitalHome"
+import Profile from "./Profile";
 
 export default class Login extends Component {
   state = {
@@ -38,6 +39,7 @@ export default class Login extends Component {
       .then((data) => {
         console.log(data);
         if (data && data.token) {
+          this.props.savePhoneno(this.state.phoneno)
           this.setState({ ...this.state,login: true });
         }
         if(data && data.userType)
@@ -52,6 +54,7 @@ export default class Login extends Component {
     if (this.state.login === true && this.state.userType=="HR") {
       console.log(this.state.userType)
       return <Redirect to="/home" />;
+     
     }
     if (this.state.login === true && this.state.userType=="Hospital") {
       console.log(this.state.userType)

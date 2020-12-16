@@ -5,6 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import "../App.css";
 import Cards from "./Cards";
 import PatientList from "./PatientList";
+import Profile from "./Profile";
 export default class HomePg extends Component {
   state = {
     logout: false,
@@ -51,8 +52,7 @@ export default class HomePg extends Component {
             <div>For any query mail us on help@chip.com</div>
           </TabPanel>
           <TabPanel>
-            {/* Profile */}
-            <h2></h2>
+           <Profile phoneno={this.props.phoneno}></Profile>
           </TabPanel>
         </Tabs>
       </div>
