@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "../App.css";
 import Cards from "./Cards";
+import Claims from "./Claims";
 import EmployeeList from "./EmployeeList";
 import Profile from "./Profile";
 export default class HomePg extends Component {
@@ -54,13 +55,13 @@ export default class HomePg extends Component {
             <Cards number="10" data={this.state.dashboard}></Cards>
           </TabPanel>
           <TabPanel>
-            <EmployeeList></EmployeeList>
+            <EmployeeList corp_id={this.props.phoneno}></EmployeeList>
           </TabPanel>
           <TabPanel>
             <Cards number="10" data={this.state.policies}></Cards>
           </TabPanel>
           <TabPanel>
-            <h2>No Claims</h2>
+            <Claims corp_id={this.props.phoneno}></Claims>
           </TabPanel>
           <TabPanel>
             <div>For any query mail us on help@chip.com</div>

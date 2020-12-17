@@ -74,7 +74,7 @@ export default class Login extends Component {
             name="phoneno"
             value={this.state.phoneno}
             onChange={this.onChange}
-            placeholder="Phone No."
+            placeholder="User ID"
             style={{ flex: "10", padding: "10px", color: "red" }}
           ></input>
           <br></br>

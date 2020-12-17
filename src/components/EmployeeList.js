@@ -21,6 +21,26 @@ export default class EmployeeList extends Component {
     ],
     newemp: { name: "a" },
   };
+  componentDidMount()
+  {
+    console.log("Employee List Cdm")
+    const Query=`SELECT name,address,grade,contact from employee where corporate_id='${this.props.corp_id}';`;
+    let post={query:Query}
+    fetch("http://localhost:3001/api/master", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(post),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.res.rows);
+      this.setState({user:data.res.rows}) });
+
+
+  }
   addEmployee = () => {
     console.log(this.state.newemp);
 
