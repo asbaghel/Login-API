@@ -4,8 +4,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "../App.css";
 import Cards from "./Cards";
-import PatientList from "./PatientList";
-import Profile from "./Profile";
+import HospitalList from "./HospitalList";
+import EmployeeProfile from "./EmployeeProfile";
 import PolicyDetails from "./PolicyDetails";
 
 export default class HomePg extends Component {
@@ -34,13 +34,13 @@ export default class HomePg extends Component {
         <button onClick={this.onClick} className="logout-btn">
           Logout
         </button>
-        <div className="acc-type">HOSPITAL</div>
+        <div className="acc-type">EMPLOYEE</div>
 
         <Tabs>
           <TabList>
             
            
-            <Tab>🏥Patient</Tab>
+            <Tab>🏥Hospital List</Tab>
             <Tab>💡Help</Tab>
             <Tab>😀Profile</Tab>
             <Tab> Get Policy details</Tab>
@@ -49,16 +49,16 @@ export default class HomePg extends Component {
           
          
           <TabPanel>
-          <PatientList  hosp_id={this.props.phoneno}></PatientList>
+          <HospitalList  emp_id={this.props.phoneno}></HospitalList>
           </TabPanel>
           <TabPanel>
             <div>For any query mail us on help@chip.com</div>
           </TabPanel>
           <TabPanel>
-           <Profile hosp_id={this.props.phoneno}></Profile>
+           <EmployeeProfile emp_id={this.props.phoneno}></EmployeeProfile>
           </TabPanel>
           <TabPanel>
-           <PolicyDetails hosp_id={this.props.phoneno}></PolicyDetails>
+           <PolicyDetails emp_id={this.props.phoneno}></PolicyDetails>
           </TabPanel>
         </Tabs>
       </div>

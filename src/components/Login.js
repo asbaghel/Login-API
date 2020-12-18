@@ -60,6 +60,10 @@ export default class Login extends Component {
       console.log(this.state.userType)
       return <Redirect to="/hospitalHome" />;
     }
+    if (this.state.login === true && this.state.userType=="Employee") {
+      console.log(this.state.userType)
+      return <Redirect to="/employeeHome" />;
+    }
 
     return (
       <div className="bgcolor">
@@ -70,7 +74,7 @@ export default class Login extends Component {
         <h1 className="header">Corporate Health Insurance Provider</h1>
         <form onSubmit={this.onSubmit}>
           <input
-            type="number"
+            type="text"
             name="phoneno"
             value={this.state.phoneno}
             onChange={this.onChange}

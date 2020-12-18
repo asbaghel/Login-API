@@ -21,7 +21,7 @@ export default class HomePg extends Component {
 
   componentDidMount()
   {
-    console.log(this.props)
+    console.log("HomePg",this.props)
   }
   onClick = () => {
     this.setState({ logout: true });

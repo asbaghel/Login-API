@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class EmployeeList extends Component {
   state = {
-    patientList: [
+   hospitalList: [
       {
         name: "Abhishek Singh Baghel",
         id: "10",
@@ -21,11 +21,10 @@ export default class EmployeeList extends Component {
     ],
     newemp: { name: "a" },
   };
-
   componentDidMount()
   {
-   
-    const Query=`select c.ssn, claim_amount from claims c, visits v where '${this.props.hosp_id}' = v.hos_id and c.ssn = v.ssn and claim_date = visitation_date;`;
+    console.log("Employee List Cdm")
+    const Query=`SELECT * from hospital;`;
     let post={query:Query}
     fetch("http://localhost:3001/api/master", {
       method: "POST",
@@ -38,7 +37,7 @@ export default class EmployeeList extends Component {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.res.rows);
-      this.setState({patientList:data.res.rows}) });
+      this.setState({hospitalList:data.res.rows}) });
 
 
   }
@@ -61,28 +60,18 @@ export default class EmployeeList extends Component {
     return (
       <div>
         <div className="empList">
-          {this.state.patientList.map((patient) => {
+          {this.state.hospitalList.map((hospital) => {
             return (
               <div>
-                {/* <h4>Name: {patient.name}</h4> */}
-                <div>SSN: {patient.ssn}</div>
-                <div>Claim Amount: {patient.claim_amount}</div>
+                <h4>Name: {hospital.name}</h4>
+                <div>Address: {hospital.address}</div>
+                <div>Contact: {hospital.contact}</div>
                 <hr></hr>
               </div>
             );
           })}
         </div>
-        <div>
-          <label>Patient Name:</label>
-          <input type="text" name="name" onChange={this.onChange}></input>
-
-          <label>Patient's Employee ID:</label>
-          <input type="text" name="id" onChange={this.onChange}></input>
-
-          <label>Email</label>
-          <input type="text" name="email" onChange={this.onChange}></input>
-          <button onClick={this.addEmployee}> Add Patient</button>
-        </div>
+        
       </div>
     );
   }

@@ -51,8 +51,18 @@ export default class Register extends Component {
       });
   };
   render() {
-    if (this.state.login) {
-      return <Redirect to="/home"></Redirect>;
+    if (this.state.login === true && this.state.userType=="HR") {
+      console.log(this.state.userType)
+      return <Redirect to="/home" />;
+     
+    }
+    if (this.state.login === true && this.state.userType=="Hospital") {
+      console.log(this.state.userType)
+      return <Redirect to="/hospitalHome" />;
+    }
+    if (this.state.login === true && this.state.userType=="Employee") {
+      console.log(this.state.userType)
+      return <Redirect to="/employeeHome" />;
     }
     return (
       <div className="bgcolor">
@@ -66,9 +76,9 @@ export default class Register extends Component {
           <br></br>
           <input name="email" type="email" onChange={this.onChange}></input>
           <br></br>
-          <label>Mobile Number</label>
+          <label>User ID</label>
           <br></br>
-          <input name="Mobileno" type="Number" onChange={this.onChange}></input>
+          <input name="Mobileno" type="text" onChange={this.onChange}></input>
           <br></br>
           <label>Gender</label>
           <br></br>

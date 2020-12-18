@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePg from "./components/HomePg";
 import Register from "./components/Register";
 import HospitalHome from "./components/HospitalHome";
+import EmployeeHome from "./components/EmployeeHome";
+
 
 export default class App extends Component {
   state = {
@@ -36,6 +38,11 @@ export default class App extends Component {
             exact
             path="/hospitalHome"
             render={(props) => <HospitalHome phoneno={this.state.phoneno} />}
+          ></Route>
+          <Route
+            exact
+            path="/employeeHome"
+            render={(props) => <EmployeeHome phoneno={this.state.phoneno} />}
           ></Route>
           <Route path="/register" component={Register}></Route>
         </Router>
