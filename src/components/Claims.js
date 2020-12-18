@@ -24,7 +24,7 @@ export default class Claims extends Component {
 
   componentDidMount() {
     // All claim of corporate emp
-
+console.log("tHSI IS CORP",this.props.corp_id)
     const Query1 = `select c.ssn,e.name, c.policy_id, c.claim_date,claim_amount, status from claims c, employee e where e.corporate_id = '${this.props.corp_id}' and e.ssn = c.ssn;`;
     let post = { query: Query1 };
     fetch("http://localhost:3001/api/master", {

@@ -7,6 +7,8 @@ import Cards from "./Cards";
 import Claims from "./Claims";
 import EmployeeList from "./EmployeeList";
 import Profile from "./Profile";
+import PolicyList from "./PolicyList";
+
 export default class HomePg extends Component {
   state = {
     logout: false,
@@ -58,7 +60,7 @@ export default class HomePg extends Component {
             <EmployeeList corp_id={this.props.phoneno}></EmployeeList>
           </TabPanel>
           <TabPanel>
-            <Cards number="10" data={this.state.policies}></Cards>
+          <PolicyList></PolicyList>
           </TabPanel>
           <TabPanel>
             <Claims corp_id={this.props.phoneno}></Claims>
